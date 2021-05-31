@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+
+{% block title%}Buy_a_computer{% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+{% load static %}
+{%include 'shop/shopbar.html'%}
+<!--style="background-color:grey; height: 80vh; "-->
+<div class="container-fluid" style="height: 80vh;background-image: url('{% static "backkk.jpg" %}'); ">
+    <div class="row" >
+        <div class="col-md-5  m-auto">
+            <div class="container " style="margin-top:250px;">
+                <p class="p-3 ml-3 text-justify font-weight-bold text-white" style="font-size:1.5em;background: rgba(15,12,36,0.5);
+backdrop-filter: blur(5px);"><u><b>Hii {{request.session.export|capfirst }}</b></u> Building your own PC and need ideas on where to get started? Explore our build
+                    guides which cover systems for a variety of use-cases and budgets</p>
+                <button type="button" class="btn btn-primary w-75 ml-5">See build guides</button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<!--/////////////////////featured prod////////////////-->
+
+<div class="container-fluid p-3" id="team1" style="background-color:white;">
+    <h5 class="section-title h1 p-5">Featured Products</h5>
+    <div class="row blog  m-5 p-5">
+        <div class="col-md-12">
+            <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#blogCarousel" data-slide-to="1"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/hed.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/cpu.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/60a.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/mon.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+                    <!--.item-->
+
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/hard.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/psu.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/col.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src='{% static "shop/PAAV.jpg" %}' alt="Image" style="max-width:100%;">
+                                </a>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+                    <!--.item-->
+
+                </div>
+                <!--.carousel-inner-->
+            </div>
+            <!--.Carousel-->
+
+        </div>
+    </div>
+</div>
+<!--///////////////////////////////////////////////?-->
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1">OUR TEAM</h5>
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src='{% static "shop/SHAH.jpg" %}' alt="card image"></p>
+                                    <h4 class="card-title">Shahid Khan</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and
+                                        button.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Shahid khan</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and
+                                        button.This is basic card with image on top, title, description and button.This
+                                        is basic card with image on top, title, description and button.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid"
+                                            src='{% static "shop/raja.jpeg" %}' alt="card image"></p>
+                                    <h4 class="card-title">Raja Umair</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and
+                                        button.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Raja Umair</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and
+                                        button.This is basic card with image on top, title, description and button.This
+                                        is basic card with image on top, title, description and button.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid"
+                                            src='{% static "shop/rohail.jpeg" %}' alt="card image"></p>
+                                    <h4 class="card-title">Rohail Ali</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and
+                                        button.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Rohail Ali</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and
+                                        button.This is basic card with image on top, title, description and button.This
+                                        is basic card with image on top, title, description and button.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+
+            <!-- ./Team member -->
+            <!-- Team member -->
+
+            <!-- ./Team member -->
+            <!-- Team member -->
+
+            <!-- ./Team member -->
+
+        </div>
+    </div>
+</section>
+<div class="container-fluid" style="background-color:white;">
+    <h4 class="text-center p-5">FREQUENTLY ASKED QUESTIONS</h4>
+    <div class="row mt-5">
+
+        <div class="col-md-3 offset-md-2">
+            <p class="p-3 text-justify ">
+                <b>What component should I start the PC building process with?</b><br><br>
+                We recommend starting with the CPU because it determines most of your component choices. Your
+                motherboard, RAM, and even your need for a graphics card all hinge on what CPU you choose. This is why
+                choosing an Intel or AMD CPU is the first and most critical step of your PC building journey.
+            </p>
+        </div>
+        <div class="col-md-3 ">
+            <p class="p-3 text-justify">
+                <b> What is a form factor? What is the difference between E-ATX, ATX, Micro-ATX and
+                    Mini-ITX?</b></br></br>
+                You can think of a form factor the same way you think about the size of a car. Just like a compact,
+                mid-sized, or full-sized car, motherboards have similar sizes. Compact or small form factor PC's use
+                Micro or Mini-ITX motherboards, mid-sized builds use ATX sized motherboards and, finally, full sized
+                builds use E-ATX form factors.
+            </p>
+        </div>
+        <div class="col-md-3 mr-3">
+            <p class="p-3 text-justify">
+                <b>What size PC should I build?</b></br></br>
+                When choosing the size of your PC here are some things to keep in mind. Small form factor PC's present
+                some limitations on the components you can use in your PC and, given their size, introduce build
+                challenges. ATX or mid-sized PCs are the most common builds and provide the largest compatibility
+                options. They are also among the easiest PCs to assemble. Finally, E-ATX provides far more options and
+                power but the size of the PC can be daunting and will take up a lot of space. This is often the most
+                costly build option.
+
+
+            </p>
+        </div>
+    </div>
+    <!--    /////////////////////////row2//////////-->
+
+</div>
+<!--////////////////////////////////////////////////-->
+<!--///////////pop prod//////////-->
+
+
+{% endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

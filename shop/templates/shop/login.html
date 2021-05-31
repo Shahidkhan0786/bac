@@ -1,0 +1,65 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  {% load static %}
+  <!-- Required meta tags -->
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href='{% static "CSS/login.css" %}'>
+
+
+
+
+  <title>{% block title %} {% endblock%}</title>
+  <style>
+      {% block css%} {% endblock%}
+    </style>
+
+</head>
+<body>
+
+{% load static %}
+
+<div class="wrapper fadeInDown">
+
+  <div id="formContent">
+	  <a href="/shop"><button type="button" class="close  p-3" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button></a>
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first p-3 mt-5">
+      <img src='{% static "shop/logo.jpg" %}' style="height:80px; width:80px;" id="icon" alt="User Icon" class="rounded-circle"/>
+    </div>
+
+    <!-- Login Form -->
+    <form class="p-5" action="#" method = post>
+        {% csrf_token %}
+      <input type="email" required id="login" class="fadeIn second" name="email" placeholder="login">
+      <input type="password" id="password" class="fadeIn third sty" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth mt-3" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+        {% if error %}
+					<div class="alert alert-danger">
+                  		<strong>{{error}}</strong>
+					</div>
+				{%endif%}
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

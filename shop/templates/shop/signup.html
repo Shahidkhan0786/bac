@@ -1,0 +1,93 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}This is index  {% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+
+{%include 'shop/shopbar.html'%}
+
+<div class="container">
+<a href="/shop"><button type="button" class="close  p-3" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button></a>
+	<form action="" method = post>
+
+	    {% csrf_token %}
+
+		<div class="row justify-content-md-center">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+
+				<div class="login-screen">
+
+					<div class="login-box">
+						{%if error %}
+							<div class="alert alert-danger">{{error}}</div>
+						{%endif%}
+						<a href="#" class="login-logo">
+							<img src="//ssl.gstatic.com/accounts/ui/logo_2x.png" alt="Bootdey bootstrap snippets bootdey">
+						</a>
+						<div class="row gutters">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<input type="text" value="{{values.first_name}}" class="form-control" placeholder="First Name" name= "fname">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<input type="text" value="{{values.last_name}}" class="form-control" placeholder="Last Name" name= "lname">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<input type="email" value="{{values.email}}"
+
+
+
+
+
+
+
+										   class="form-control" placeholder="Email ID" name= "email">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<input type="password" class="form-control" placeholder="Password" name="pass">
+								</div>
+							</div>
+						</div>
+						<div class="actions clearfix">
+							<button type="submit" class="btn btn-primary btn-block">Signup</button>
+						</div>
+						<div class="or">
+							<span>or signup using</span>
+						</div>
+						<div class="row gutters">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<button type="submit" class="btn btn-tw btn-block">Twitter</button>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<button type="submit" class="btn btn-fb btn-block">Facebook</button>
+							</div>
+						</div>
+						<a  href="/shop/login" class="additional-link">Have an Account? <span>Login Now</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+
+
+
+{% endblock%}

@@ -1,0 +1,80 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+
+{% block content %}
+<!--<div class="container mt-5  mb-5 p-2">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-4 offset-md-4">-->
+<!--            -->
+<!--            <form method="post" action="">-->
+<!--                {% csrf_token %}-->
+<!--                <div class="form-control">-->
+<!--                {{ form.as_p}}-->
+<!--                </div>-->
+<!--                <input type="submit" class="btn btn-primary form-control" value="{% trans 'Submit' %}"/>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="container p-2 mt-5 ">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 p-5 mb-5 rounded" id="xcx">
+         {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+            {% if user.is_authenticated %}
+            <h1>You are login <br>first logout</h1>
+            {% else%}
+            <form method="post" action="" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-white">Username</label>
+                    {% render_field form.username class="form-control" placeholder="Username"%}
+                    <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-white">Email</label>
+                    {% render_field form.email class="form-control" placeholder="Email" %}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-white">Pssword</label>
+                    {% render_field form.password1 class="form-control" placeholder="password" %}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-white">Confirm Password</label>
+                    {% render_field form.password2 class="form-control" placeholder="password" %}
+                </div>
+
+
+                <input type="submit" class="btn btn-primary form-control" value="{% trans 'Submit' %}"/>
+
+
+
+
+            </form>
+
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,51 @@
+
+{% extends 'base2.html'%}
+
+
+{% load static %}
+{% block title%}This is Product  {% endblock%}
+{% block css%}
+.bg-darkx{
+background-color: #808080 !important;
+
+}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-right bg-darkx"   id="sidebar-wrapper">
+
+                <div class="list-group list-group-flush">
+                   <a class="list-group-item list-group-item-action bg-darkx text-white" href="/bloghomee/">Blog</a>
+                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/usrbuilds/">My Builds</a>
+                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/showcart/">Cart</a>
+                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/orders/ ">order</a>
+
+
+                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/shop/profile/{{ user.myprofile.id }}">Profile</a>
+                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/shop/profile/edit/{{ user.myprofile.id }}">Edit Profile</a>
+                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/accounts/logout/">Logout</a>
+
+                </div>
+            </div>
+            <!-- Page Content-->
+            <div id="page-content-wrapper">
+
+
+                <div class="container mt-5">
+                  {% block left%}
+
+                   {%endblock%}
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

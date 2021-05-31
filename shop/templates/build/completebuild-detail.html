@@ -1,0 +1,88 @@
+
+{% extends 'base.html' %}
+{% block title%}Product  {% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+{%include 'shop/shopbar.html'%}
+
+<div class="container p-5">
+    <hr>
+    <h2 class="text-center">Build Detail</h2>
+    <hr>
+    <div class="row">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Product</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Owner</th>
+      <td>{{product.owner}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">Processor</th>
+      <td>{{product.cpu}}</td>
+
+    </tr>
+      <tr>
+      <th scope="row">Motherbord</th>
+      <td>{{product.Mobo}}</td>
+
+    </tr>
+
+      <tr>
+      <th scope="row">Ram</th>
+      <td>{{product.ram}}</td>
+
+    </tr>
+
+      <tr>
+      <th scope="row">Graphic Card</th>
+      <td>{{product.graphiccard}}</td>
+
+    </tr>
+
+      <tr>
+      <th scope="row">Storage</th>
+      <td>{{product.storage}}</td>
+
+    </tr>
+
+      <tr>
+      <th scope="row">Power</th>
+      <td>{{product.power_supply}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">Chases</th>
+      <td>{{product.Chases}}</td>
+
+    </tr>
+
+
+  </tbody>
+</table>
+    </div>
+  <hr>
+  <div class="container">
+  <div class="fb-like" data-href="http://127.0.0.1:8000/complete-builds-detail/{{product.id}}/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+</div>
+  <div class="fb-comments" data-href="http://127.0.0.1:8000/complete-builds-detail/{{product.id}}/" data-width="" data-numposts="5"></div>
+
+</div>
+
+
+{% endblock%}

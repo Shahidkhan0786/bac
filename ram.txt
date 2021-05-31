@@ -1,0 +1,14 @@
+ddr1 = 2.5   (100 - 400)mhz
+ddr2 = 1.8   (400 - 1066)mhz
+ddr3 = 1.5   (800 - 2133)mhz
+ddr4 = 1.2/1.05    (1600 - 3200)mhz
+
+
+
+motherboard=============
+
+Form-Factor:
+1. Mini-ITX Form Factor, 17.0cm x 17.0cm
+2. Micro-ATX Form Factor , 24.4 x 24.4 cm
+3. ATX Form Factor ,30.5cm x 24.4cm
+4. E-ATX Form Factor, 30.5cm x 26.9cm

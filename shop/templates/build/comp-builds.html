@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% block title%}Product  {% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+{%include 'shop/shopbar.html'%}
+<div class="container">
+
+
+
+<div class="row p-5">
+	{%for prod in product%}
+<div class="col-md-3">
+	<figure class="card card-product">
+		<div class="img-wrap">
+			<img src="{{prod.image.url}}">
+
+		</div>
+		<figcaption class="info-wrap">
+			<h6 class="title text-dots"><a href="#">{{prod.name}}</a></h6>
+			<div class="action-wrap">
+				<form action="/complete-builds-detail/{{prod.id}}/" method="Post">
+					{% csrf_token %}
+					<input type="hidden" value="{{prod.id}}" name="iddd" >
+				<input type="submit" value="Read" class="btn btn-primary btn-sm float-right ml-2 mt-4">
+				</form>
+				<div class="price-wrap h5">
+					<span class="price-new">{{prod.price}}</span>
+					<span class="price-new">{{prod.owner}}</span>
+
+
+				</div> <!-- price-wrap.// -->
+			</div> <!-- action-wrap -->
+		</figcaption>
+	</figure> <!-- card // -->
+</div>
+	{%endfor%}<!-- col // -->
+
+</div> <!-- row.// -->
+
+
+<!--	///////////////row3////////-->
+</div>
+
+
+{% endblock%}

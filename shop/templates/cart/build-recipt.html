@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block content%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="container p-5">
+                <hr>
+                <h2 class="text-center">Build Detail</h2>
+                <hr>
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Product</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Owner</th>
+                            <td>{{product.owner}}</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Processor</th>
+                            <td>{{product.cpu}}</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Motherbord</th>
+                            <td>{{product.Mobo}}</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Ram</th>
+                            <td>{{product.ram}}</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Graphic Card</th>
+                            <td>{{product.graphiccard}}</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Storage</th>
+                            <td>{{product.storage}}</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Power</th>
+                            <td>{{product.power_supply}}</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Chases</th>
+                            <td>{{product.Chases}}</td>
+
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <h2>Total RS: {{total}}</h2>
+
+                <div class="card" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Details</h5>
+                        <p class="card-text">Send money recipt on chat after this we deliver your order.</p>
+                        <a href="/" class="btn btn-primary">Home</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-7">
+            <div class="container p-5">
+                <hr>
+                <h2 class="text-center">Payment Detail</h2>
+                <hr>
+
+                <div class="col-md-4 ml-2 ">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top p-2" src="{% static 'jc.jpg'%}" alt="Card image cap">
+                        <div class="card-body">
+                            <ol>
+                                <li>Number: 0301-8130376</li>
+                                <li>Send me recipect on chat after sending</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 ml-2 mt-2">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top p-2" src="{% static 'asy.jpg'%}" alt="Card image cap">
+                        <div class="card-body">
+                            <ol>
+                                <li>Number: 0301-8130376</li>
+                                <li>Send me recipect on chat after sending</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 ml-2 mt-2">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top p-2" src="{% static 'bank.jpg'%}" alt="Card image cap">
+                        <div class="card-body">
+                            <ol>
+                                <li>Number: 0301-8130376</li>
+                                <li>Send me recipect on chat after sending</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--            //end-->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

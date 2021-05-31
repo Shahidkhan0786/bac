@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block content %}
+<div class="container">
+ <div class="row mt-5">
+  <div class="col-sm-6">
+    <h4>Order Summary</h4>
+    <hr>
+    {% for i in cart%}
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5>Product: {{i.product.name}}</h5>
+          <p>Quantity: {{i.quantity}}</p>
+          <p class="fw-bold">Price: {{i.amount}}</p>
+        </div>
+      </div>
+    {%endfor%}
+
+    <div class="text-primary">Total Amount :{{totalamount}}</div>
+    <small>Term and Condition: Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ullam saepe! Iure optio repellat dolor velit, minus rem. Facilis cumque neque numquam laboriosam, accusantium adipisci nisi nihil in et quis?</small>
+  </div>
+  <div class="col-sm-4 offset-sm-1">
+    <h4>Select Shipping Address</h4>
+    <hr>
+    <form action="/payment/">
+
+      <div class="card">
+        <div class="card-body">
+        <h5>{{add.user}}</h5>
+        <p>{{add.address}}</p>
+          <p>City :{{add.city}}</p>
+          <p>ZipCode :{{add.zipcode}}</p>
+        </div>
+      </div>
+        <div class="form-check mt-2 mb-5">
+          <input class="form-check-input" type="radio" value="">
+          <label class="form-check-label fw-bold" for="">
+            Address: 1 </label>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-warning mt-3 px-5 fw-bold">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,103 @@
+
+{% extends 'base.html'%}
+
+{% block title%}Build_guid {% endblock%}
+{% block css%}
+.imggf{
+height:250px;
+width:250px;
+}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+{%include 'shop/shopbar.html'%}
+<div class="container-fluid" style="background:#F4F4F3;">
+<div class="container p-3" >
+    <div class="row">
+        <div class="col-md-10" >
+            <div class="text-center">
+            <img src="{{data.image.url}}" class="imggf">
+            </div>
+            <h2>Description</h2>
+            <hr>
+            <h2>Title</h2>
+               {% autoescape off%}
+            <h5>{{data.title}}</h5>
+                {% endautoescape%}
+            <hr>
+
+            <h2>Introduction</h2>
+            {% autoescape off%}
+            <h5>{{data.introduction}}</h5>
+            {%endautoescape%}
+            <hr>
+             <h2>Note On Price</h2>
+            {% autoescape off%}
+            <h5>{{data.note_on_price}}</h5>
+            {%endautoescape%}
+            <hr>
+            {% autoescape off%}
+              <h2>CPU</h2>
+             <h5 class="p-5">{{data.cpu}}</h5>
+                {% endautoescape%}
+            <hr>
+              <h2>Motherboard</h2>
+                {% autoescape off%}
+            <h5>{{data.mobo}}</h5>
+            {% endautoescape%}
+            <hr>
+
+                <h2>Memory</h2>
+                {% autoescape off%}
+            <h5>{{data.memory}}</h5>
+            {% endautoescape%}
+            <hr>
+
+                <h2>Storage</h2>
+                {% autoescape off%}
+            <h5>{{data.storage}}</h5>
+            {% endautoescape%}
+            <hr>
+                <h2>Gpu</h2>
+                {% autoescape off%}
+            <h5>{{data.gpu}}</h5>
+            {% endautoescape%}
+            <hr>
+                  <h2>Case</h2>
+                {% autoescape off%}
+            <h5>{{data.case}}</h5>
+            {% endautoescape%}
+            <hr>
+                  <h2>PSU</h2>
+                {% autoescape off%}
+            <h5>{{data.psu}}</h5>
+            {% endautoescape%}
+            <hr>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="container">
+  <div class="fb-like" data-href="http://127.0.0.1:8000/complete-builds-detail/{{product.id}}/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+</div>
+  <div class="fb-comments" data-href="http://127.0.0.1:8000/complete-builds-detail/{{data.id}}/" data-width="" data-numposts="5"></div>
+
+</div>
+</div>
+
+{% endblock %}

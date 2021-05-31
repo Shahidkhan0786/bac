@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+{% block title%}This is index  {% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+
+
+{%include 'shop/shopbar.html'%}
+{% load static %}
+<div class="container p-5">
+    <div class="row">
+        <div class="col=md-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.623817981935!2d72.78446691505609!3d33.74454238069076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa6bc26bfa2db%3A0x2344c019578abeac!2sCOMSATS%20University%20Islamabad%2C%20Wah%20Campus!5e0!3m2!1sen!2s!4v1620635610246!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        <div class="col=md-6">
+
+
+             <div class="contact-image">
+                <img src="{% static 'shop/bgg.png'%}" alt="rocket_contact"/>
+            </div>
+            <form action="/contact/" method="post" style="width:400px;" class="ml-5">
+                {% csrf_token %}
+                <h3>Drop Us a Message</h3>
+
+
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="form-control" placeholder="Your Phone Number *" value="" />
+                        </div>
+                 <div class="form-group">
+                            <textarea name="content" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btn btn-primary" value="Send" />
+                        </div>
+
+
+
+
+
+
+            </form>
+
+
+<!--           //endform///-->
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock%}

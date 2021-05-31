@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+
+{% load widget_tweaks %}
+
+{%block content%}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+
+  <form method="post" enctype="multipart/form-data" class="mt-5 p-3">
+    {% csrf_token %}
+    <div class="container register-form ">
+      <div class="form">
+        <div class="bg-dark p-3 text-center text-white">
+          <h3>Register to B & B</h3>
+        </div>
+        <br><br><br>
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                       <label for="cnic"></label>
+                {% render_field formu.username class="form-control" placeholder="UserName" %}
+              </div>
+              <div class="form-group">
+                {% render_field formu.email class="form-control" placeholder="email" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.ShopNmae class="form-control" placeholder="Shop name" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.mobile class="form-control" placeholder="Mobile number" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.gender required="required" class="form-control" placeholder="Gender" %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                   <label for="cnic">CNIC</label>
+                {% render_field form.cnic class="form-control" placeholder="Cnic" %}
+              </div>
+              <div class="form-group">
+                  <label for="img">Image</label>
+                {% render_field form.image class="form-control" placeholder="image" %}
+              </div>
+              <div class="form-group">
+                {% render_field formu.password class="form-control"  placeholder="password" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.age class="form-control" placeholder="Age" %}
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark ">Register</button>
+          <div class="text-center">Already have an account? <a href="/admin">Login here</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

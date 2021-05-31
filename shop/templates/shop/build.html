@@ -1,0 +1,145 @@
+
+
+{% extends 'base.html'%}
+{% block title%}This is Product  {% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+{%include 'shop/shopbar.html'%}
+
+
+<div class="container p-5">
+  <h2>Custom Building</h2>
+  <p>By your machine according to your choice</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Select</th>
+        <th>Edit</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CPU</td>
+        <td><button type="button" class="btn btn-info" onclick="window.location.href='/cpu/';">CPU</button></td>
+        <td>
+
+                {% if request.session.cpuname %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.cpuname}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/cpu/" class="text-decoration-none">X</a></span>
+                     <span><a href="/delxxy/" class="btn btn-danger">Del</a></span>
+                     <span><a href="/delxx/" class="btn btn-danger">Del All</a></span>
+                {% endif %}
+
+
+
+        </td>
+      </tr>
+      <tr>
+        <td>Motherbord</td>
+        <td><button type="button" class="btn btn-info"  onclick="window.location.href='/mobo/';"> MB</button></td>
+        <td>
+             {% if request.session.moboname %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.moboname}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/mobo/" class="text-decoration-none">X</a></span>
+                   <span><a href="/delxxm/" class="btn btn-danger">Del</a></span>
+                {% endif %}
+
+        </td>
+      </tr>
+      <tr>
+        <td>Ram</td>
+        <td><button type="button" class="btn btn-info" onclick="window.location.href='/ramb/';">RAM</button></td>
+        <td>
+             {% if request.session.ramname %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.ramname}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/ramb/" class="text-decoration-none">X</a></span>
+                     <span><a href="/delxxram/" class="btn btn-danger">Del</a></span>
+                {% endif %}
+
+        </td>
+      </tr>
+      <tr>
+        <td>Graphic_Card</td>
+        <td><button type="button" class="btn btn-info" onclick="window.location.href='/graphicx/';">display</button></td>
+        <td>
+             {% if request.session.gname %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.gname}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/graphicx/" class="text-decoration-none">X</a></span>
+                     <span><a href="/delxxgnam/" class="btn btn-danger">Del</a></span>
+            {% endif %}
+
+        </td>
+      </tr>
+      <tr>
+        <td>Storage</td>
+        <td><button type="button" class="btn btn-info" onclick="window.location.href='/storagex/';">Storage</button></td>
+        <td>
+             {% if request.session.dnam %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.dnam}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/storagex/" class="text-decoration-none">X</a></span>
+                     <span><a href="/delxxdnam/" class="btn btn-danger">Del</a></span>
+            {% endif %}
+        </td>
+      </tr>
+     <tr>
+        <td>Power-Suply</td>
+        <td><button type="button" class="btn btn-info" onclick="window.location.href='/smpsx/';">power</button></td>
+        <td>
+             {% if request.session.psuu %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.psuu}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/smpsx/" class="text-decoration-none">X</a></span>
+                     <span><a href="/delxxps/" class="btn btn-danger">Del</a></span>
+            {% endif %}
+
+        </td>
+      </tr>
+     <tr>
+        <td>Case</td>
+        <td><button type="button" class="btn btn-info" onclick="window.location.href='/casesx/';">case</button></td>
+        <td>
+             {% if request.session.case %}
+                     <button type="button " class="btn btn-warning">
+                        <h3 >{{request.session.case}}</h3>
+                     </button>
+                     <span class="btn btn-danger"><a href="/casesx/" class="text-decoration-none">X</a></span>
+                     <span><a href="/delxxcase/" class="btn btn-danger">Del</a></span>
+            {% endif %}
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    <a href="/savebuild/" class="btn btn-primary d-block">Save</a>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock%}

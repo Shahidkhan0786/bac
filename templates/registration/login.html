@@ -1,0 +1,109 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block content %}
+
+<!--<div class="container mt-5  mb-5 p-2">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-4 offset-md-4">-->
+<!--            {% if user.is_authenticated %}-->
+<!--            <h1>You are login <br>first logout</h1>-->
+<!--            {% else%}-->
+<!--            <form method="post" action="">-->
+<!--                {% csrf_token %}-->
+<!--                {{ form  }}-->
+<!--                <br>-->
+<!--                <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}"/>-->
+<!--                <input type="hidden" name="next" value="{{ next }}"/>-->
+<!--            </form>-->
+<!--            {%endif%}-->
+<!--            &lt;!&ndash;            <a class="btn btn-primary"></a>&ndash;&gt;-->
+<!--            <a href="{% url 'auth_password_reset' %}" class="btn btn-danger p-2 mt-3">{% trans "Forgot Password" %}</a>-->
+<!--            <a href="{% url 'registration_register' %}" class="btn btn-primary p-2 mt-3">{% trans "Register" %}</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="container p-2 mt-5 ">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 p-5 mb-5 rounded" id="xcx">
+         {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+            {% if user.is_authenticated %}-->
+            <h1>You are login <br>first logout</h1>
+            {% else%}
+            <form method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
+                    {% render_field form.username class="form-control" placeholder="Username"%}
+                    <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-white">Password</label>
+                    {% render_field form.password class="form-control" placeholder="Password" %}
+                </div>
+
+                <input type="submit" class="btn btn-primary btn-block" value="{% trans 'Log in' %}"/>
+                <input type="hidden" name="next" value="{{ next }}"/>
+
+                <a href="{% url 'registration_register' %}" class="btn btn-primary p-2 mt-3 btn-block">{% trans "Register" %}</a>
+                 <a href="{% url 'auth_password_reset' %}" class="btn btn-danger btn-block  p-2 mt-3">{% trans "Forgot Password" %}</a>
+
+
+
+            </form>
+
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+{% comment %}
+**registration/login.html**
+
+It's your responsibility to provide the login form in a template called
+registration/login.html by default. This template gets passed four
+template context variables:
+
+``form``
+A Form object representing the login form. See the forms
+documentation for more on Form objects.
+
+``next``
+The URL to redirect to after successful login. This may contain a
+query string, too.
+
+``site``
+The current Site, according to the SITE_ID setting. If you don't
+have the site framework installed, this will be set to an instance
+of RequestSite, which derives the site name and domain from the
+current HttpRequest.
+
+``site_name``
+An alias for site.name. If you don't have the site framework
+installed, this will be set to the value of
+request.META['SERVER_NAME']. For more on sites, see The
+"sites" framework.
+{% endcomment %}

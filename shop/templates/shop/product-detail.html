@@ -1,0 +1,176 @@
+
+
+{% extends 'base.html' %}
+{% block title%}Product  {% endblock%}
+{% block css%}
+.single_product{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding:1px;
+}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+
+{%include 'shop/shopbar.html'%}
+<div class="super_container">
+    <header class="header" style="display: none;">
+        <div class="header_main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <div class="header_search">
+                            <div class="header_search_content">
+                                <div class="header_search_form_container">
+                                    <form action="#" class="header_search_form clearfix">
+                                        <div class="custom_dropdown">
+                                            <div class="custom_dropdown_list"><span
+                                                    class="custom_dropdown_placeholder clc">All Categories</span> <i
+                                                    class="fas fa-chevron-down"></i>
+                                                <ul class="custom_list clc">
+                                                    <li><a class="clc" href="#">All Categories</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="single_product">
+        <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
+            <div class="row">
+                <div class="col-lg-4 order-lg-1 order-2" >
+
+                    <div class="show1" href='{{pod.image.url}}' id="hhh1">
+                        <img src='{{pod.image.url}}' id="show-img ">
+                    </div>
+
+                    <!-- ///////carasol for thumbnails -->
+                    <div class="small-img">
+                        <img src="images/online_icon_right@2x.png" class="icon-left" alt="" id="prev-img ">
+
+                        <div class="small-container">
+                            <div id="small-img-roll">
+                                <img src='{{pod.image.url}}' class="show-small-img" alt="">
+<!--                                <img src='{% static "shop/case.png" %}' class="show-small-img" alt="">-->
+<!--                                <img src='{% static "shop/22.png" %}' class="show-small-img" alt="">-->
+                                ...
+                            </div>
+                        </div>
+                        <img src="images/online_icon_right@2x.png" class="icon-right" alt="" id="next-img">
+                    </div>
+                </div>
+                <!--                <div class="col-lg-2 order-lg-1 order-2">-->
+                <!--                    <ul class="image_list">-->
+                <!--                        <li data-image="https://i.imgur.com/21EYMGD.jpg"><img src="https://i.imgur.com/21EYMGD.jpg" alt=""></li>-->
+                <!--                        <li data-image="https://i.imgur.com/DPWSNWd.jpg"><img src="https://i.imgur.com/DPWSNWd.jpg" alt=""></li>-->
+                <!--                        <li data-image="https://i.imgur.com/HkEiXfn.jpg"><img src="https://i.imgur.com/HkEiXfn.jpg" alt=""></li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
+                <!--                <div class="col-lg-4 order-lg-2 order-1">-->
+                <!--                    <div class="image_selected"><img src="https://i.imgur.com/qEwct2O.jpg" alt=""></div>-->
+                <!--                </div>-->
+
+
+                <div class="col-lg-6 order-3" id="hhh">
+                    <div class="product_description">
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                <li class="breadcrumb-item active">Accessories</li>
+                            </ol>
+                        </nav>
+                        <div class="product_name">
+                            {{pod.name}}
+                        </div>
+                        <div class="product-rating"><span class="badge badge-success"><i class="fa fa-star"></i> {{pod.prating}} stars</span>
+                            <span class="rating-review">{{pod.prating}} Ratings & {{pod.preview}} Reviews</span></div>
+                        <div><span class="product_price">₹ {{pod.price}}</span> <strike class="product_discount"> <span
+                                style='color:black'>₹ {{pod.dprice}}<span> </strike></div>
+                        <div><span class="product_saved">You Saved:</span> <span style='color:black'>₹ {{pod.dprice}}<span></div>
+                        <hr class="singleline">
+                        <div><span class="product_info">EMI starts at ₹ 2,000. No Cost EMI Available</span><br> <span
+                                class="product_info">Warranty: 6 months warranty</span><br> <span class="product_info">7 Days easy return policy</span><br> <span
+                                class="product_info">7 Days easy return policy</span><br> <span class="product_info">In Stock: 25 units sold this week</span>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="br-dashed">
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-3"><img
+                                                    src="https://img.icons8.com/color/48/000000/price-tag.png"></div>
+                                            <div class="col-md-9 col-xs-9">
+                                                <div class="pr-info"><span class="break-all">Get 5% instant discount + 10X rewards @ RENTOPC</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7"></div>
+                            </div>
+                            <div class="row" style="margin-top: 15px;">
+                                <div class="col-xs-6" style="margin-left: 15px;"><span class="product_options">RAM Options</span><br>
+                                    <button class="btn btn-primary btn-sm">4 GB</button>
+                                    <button class="btn btn-primary btn-sm">8 GB</button>
+                                    <button class="btn btn-primary btn-sm">16 GB</button>
+                                </div>
+                                <div class="col-xs-6" style="margin-left: 55px;"><span class="product_options">Storage Options</span><br>
+                                    <button class="btn btn-primary btn-sm">500 GB</button>
+                                    <button class="btn btn-primary btn-sm">1 TB</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="singleline">
+                        <div class="order_info d-flex flex-row">
+                            <form action="#">
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6" style="margin-left: 13px;">
+<!--                                <div class="product_quantity"><span>QTY: </span> <input id="quantity_input" type="text"-->
+<!--                                                                                        pattern="[0-9]*" value="1">-->
+<!--&lt;!&ndash;                                    <div class="quantity_buttons">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div id="quantity_inc_button" class="quantity_inc quantity_control"><i&ndash;&gt;-->
+<!--&lt;!&ndash;                                                class="fas fa-chevron-up"></i></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div id="quantity_dec_button" class="quantity_dec quantity_control"><i&ndash;&gt;-->
+<!--&lt;!&ndash;                                                class="fas fa-chevron-down"></i></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                                </div>-->
+                            </div>
+                            <div class="col-xs-6">
+                                <form action="/cart/" method="POST">
+                                    {% csrf_token %}
+                                    {% if item%}
+                                          <a class="btn btn-primary" href="/showcart/">Go to Cart</a>
+                                    {% else %}
+                                          <a class="btn btn-primary" href="/cart/{{pod.id}}">Add to Cart</a>
+                                    {% endif%}
+
+                                <input type="text" value="{{pod.id}}" id="c1" name="pidd">
+
+<!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{%endblock%}

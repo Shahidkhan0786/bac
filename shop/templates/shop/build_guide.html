@@ -1,0 +1,241 @@
+
+{% extends 'base.html'%}
+
+{% block title%}Build_guid {% endblock%}
+{% block css%}
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+{% load static %}
+{%include 'shop/shopbar.html'%}
+<div class="container">
+
+
+
+<div class="row p-5">
+	{%for prod in product%}
+<div class="col-md-3">
+
+	<figure class="card card-product">
+
+		<div class="img-wrap">
+			<img src="{{prod.image.url}}">
+			<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+		</div>
+		<figcaption class="info-wrap">
+			<h6 class="title text-dots"><a href="#">{{prod.title}}</a></h6>
+			<div class="action-wrap">
+				<a href="/shop/bgproducts/{{prod.id}}" class="btn btn-primary btn-sm float-right"> read </a>
+				<div class="price-wrap h5">
+					<span class="price-new">{{prod.price}}</span>
+
+				</div> <!-- price-wrap.// -->
+			</div> <!-- action-wrap -->
+		</figcaption>
+	</figure> <!-- card // -->
+</div>
+	{%endfor%}<!-- col // -->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"> <img src='{% static "shop/gam2.jpg" %}'-->
+<!--		<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">The name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"><img src='{% static "shop/gam2.jpg" %}'>-->
+<!--		<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">Name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"> <img src='{% static "shop/gam2.jpg" %}'>-->
+<!--			<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">The name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; row.// &ndash;&gt;-->
+
+<!--&lt;!&ndash;////////////row 2/&ndash;&gt;-->
+
+<!--	<div class="row p-5">-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap">-->
+<!--			<img src='{% static "shop/gam2.jpg" %}'>-->
+<!--			<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">Good item name</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$1280</span>-->
+<!--					<del class="price-old">$1980</del>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"> <img src='{% static "shop/gam2.jpg" %}'-->
+<!--		<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">The name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"><img src='{% static "shop/gam2.jpg" %}'>-->
+<!--		<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">Name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"> <img src='{% static "shop/gam2.jpg" %}'>-->
+<!--			<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">The name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; row.// &ndash;&gt;-->
+
+<!--&lt;!&ndash;	/////////////row2/&ndash;&gt;-->
+
+<!--&lt;!&ndash;	////////////row3///////////&ndash;&gt;-->
+<!--	<div class="row p-5">-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap">-->
+<!--			<img src='{% static "shop/gam2.jpg" %}'>-->
+<!--			<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">Good item name</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$1280</span>-->
+<!--					<del class="price-old">$1980</del>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"> <img src='{% static "shop/gam2.jpg" %}'-->
+<!--		<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">The name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"><img src='{% static "shop/gam2.jpg" %}'>-->
+<!--		<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">Name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+<!--<div class="col-md-3">-->
+<!--	<figure class="card card-product">-->
+<!--		<div class="img-wrap"> <img src='{% static "shop/gam2.jpg" %}'>-->
+<!--			<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>-->
+<!--		</div>-->
+<!--		<figcaption class="info-wrap">-->
+<!--			<h6 class="title text-dots"><a href="#">The name of product</a></h6>-->
+<!--			<div class="action-wrap">-->
+<!--				<a href="#" class="btn btn-primary btn-sm float-right"> Order </a>-->
+<!--				<div class="price-wrap h5">-->
+<!--					<span class="price-new">$280</span>-->
+<!--				</div> &lt;!&ndash; price-wrap.// &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; action-wrap &ndash;&gt;-->
+<!--		</figcaption>-->
+<!--	</figure> &lt;!&ndash; card // &ndash;&gt;-->
+<!--</div> &lt;!&ndash; col // &ndash;&gt;-->
+</div> <!-- row.// -->
+
+
+<!--	///////////////row3////////-->
+</div>
+
+
+{% endblock%}
