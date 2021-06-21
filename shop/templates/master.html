@@ -3,11 +3,15 @@
 
 
 {% load static %}
-{% block title%}This is Product  {% endblock%}
+{% block title%}Dasbord  {% endblock%}
 {% block css%}
 .bg-darkx{
 background-color: #808080 !important;
 
+}
+
+.mar{
+padding-left:0px;
 }
 
 {% endblock%}
@@ -15,13 +19,15 @@ background-color: #808080 !important;
 
 {% block content %}
 
+<div class="container-fluid mar">
+
 
 
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
-            <div class="border-right bg-darkx"   id="sidebar-wrapper">
+            <div class="border-right bg-darkx col-md-2 col-sm-2"   id="sidebar-wrapper">
 
-                <div class="list-group list-group-flush">
+                <div class="list-group list-group-flush ">
                    <a class="list-group-item list-group-item-action bg-darkx text-white" href="/bloghomee/">Blog</a>
                     <a class="list-group-item list-group-item-action bg-darkx text-white" href="/usrbuilds/">My Builds</a>
                     <a class="list-group-item list-group-item-action bg-darkx text-white" href="/showcart/">Cart</a>
@@ -35,7 +41,7 @@ background-color: #808080 !important;
                 </div>
             </div>
             <!-- Page Content-->
-            <div id="page-content-wrapper">
+            <div id="page-content-wrapper col-md-10 col-sm-10">
 
 
                 <div class="container mt-5">
@@ -46,6 +52,6 @@ background-color: #808080 !important;
             </div>
         </div>
 
-
+</div>
 
 {% endblock %}

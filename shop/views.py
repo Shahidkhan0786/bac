@@ -857,7 +857,8 @@ def save_build(request):
     try:
         xx = Case.objects.get(name=chases)
         im = xx.image
-        Build_PC.objects.create(image=im, owner=usr, cpu=cpux, Mobo=motherbord, ram=ramx, graphiccard=graphicc,
+        Build_PC.objects.create(image=im, owner=usr, cpu=cpux, Mobo=motherbord,
+                                ram=ramx, graphiccard=graphicc,
                                 storage=storagee,
                                 power_supply=psu, Chases=chases)
         delx(request)

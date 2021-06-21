@@ -85,7 +85,7 @@ class CPU(models.Model):
     image = models.ImageField(upload_to="uploads")
     vendor = models.ForeignKey(vendor , on_delete=models.CASCADE)
     cpu_name=models.CharField(max_length=250)
-    cpu_price = models.IntegerField(default="")
+    cpu_price = models.IntegerField(default=0)
     dprice = models.FloatField(default=0, null=True, blank=True)
     desc = models.TextField( default="", null=True)
 
@@ -102,7 +102,7 @@ class Storage(models.Model):
     name = models.CharField(max_length=250)
     image = models.ImageField(upload_to="uploads")
     vendor=models.ForeignKey(vendor , on_delete=CASCADE)
-    price = models.IntegerField(default="")
+    price = models.IntegerField(default=0)
     dprice = models.FloatField(default=0, null=True, blank=True)
     desc = models.TextField( default="", null=True)
     storage_type =models.CharField(max_length=250 ,default="SATA", choices=(("SATA","SATA"), ("IDE","IDE"), ("M.2","M.2")))
@@ -120,7 +120,7 @@ class Motherboard(models.Model):
     chipset = models.ForeignKey(chipset , on_delete=models.CASCADE)
     socket = models.ForeignKey(socket ,on_delete=models.CASCADE)
     vendor = models.ForeignKey(vendor , on_delete=models.CASCADE)
-    price = models.IntegerField(default="")
+    price = models.IntegerField(default=0)
     dprice = models.FloatField(default=0, null=True, blank=True)
     desc = models.TextField(default="", null=True)
     DIMM_sockets  = models.CharField(max_length=250 ,default="single", choices=(("dual","dual"), ("single","single"),("4","4"),("8","8")))
@@ -168,7 +168,7 @@ class Graphic_Card(models.Model):
     image = models.ImageField(upload_to="uploads")
     vendor = models.ForeignKey(vendor , on_delete=models.CASCADE)
     Memory= models.CharField(max_length=250 ,default="2GB", choices=(("2GB","2GB"), ("4GB","4GB"), ("8GB","8GB")))
-    price = models.IntegerField(default="")
+    price = models.IntegerField(default=0)
     dprice = models.FloatField(default=0, null=True, blank=True)
     desc = models.TextField(default="", null=True)
     version= models.CharField(max_length=250 ,default="version 1", choices=(("version 1","version 1"), ("version 2","version 2"), ("version 3","version 3")))
@@ -185,7 +185,7 @@ class Smps(models.Model):
     image = models.ImageField(upload_to="uploads")
     name= models.CharField(max_length=250)
     watt = models.CharField(max_length=250 ,default="250", choices=(("250","250"), ("400","400"), ("450","450"), ("500","500"), ("600","600"), ("750","750"), ("800","800"), ("1000","1000")))
-    price = models.IntegerField(default="")
+    price = models.IntegerField(default=0)
     dprice = models.FloatField(default=0, null=True, blank=True)
     desc = models.TextField(default="", null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default='', null=True, blank=True)
@@ -271,6 +271,8 @@ class Build_PC(models.Model):
     power_supply = models.CharField(max_length=250)
     image = models.ImageField(upload_to="uploads" ,default="" ,null=True ,blank='True')
     Chases=models.CharField(max_length=250)
+    vote_count = models.IntegerField(default= 0 , null=True , blank=True)
+    vote_average= models.FloatField(default=0.0 , null=True , blank=True)
 
 
 
@@ -348,7 +350,7 @@ class builds_guides(models.Model):
     gpu=HTMLField()
     case=HTMLField()
     psu=HTMLField()
-    image = models.ImageField(upload_to="uploads" ,default="" ,null=True ,blank='True')
+    image = models.ImageField(upload_to="" ,default="" ,null=True ,blank='True')
 
     owner=models.ForeignKey(User , on_delete=models.CASCADE)
 
