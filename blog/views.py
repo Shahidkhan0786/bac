@@ -5,7 +5,8 @@ from .models import Contact, post, Catagory, BlogComment
 from django.http import HttpResponse
 from shop.models import MyProfile
 from blog.templatetags import extras
-
+from .serializers import postSerializer
+from rest_framework.renderers import JSONRenderer
 
 def index(request):
     dataa = post.acceptpost.all().order_by('-post_id')
@@ -91,3 +92,13 @@ def postComment(request):
 
     return redirect(f"display-post/{postx.post_id}/")
     # return redirect('/shop')
+
+
+
+
+def postsdetail(request):
+    stu = post.objects.all()
+    serializer = postSerializer(stu,many=True)
+    json_data = JSONRenderer().render(serializer.data)
+    print(json_data)
+    return HttpResponse(json_data , content_type='application/json')

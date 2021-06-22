@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password, check_password
-
+from . serializers import builds_guidesSerializer,Build_PCSerializer
+from rest_framework.renderers import JSONRenderer
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
@@ -998,3 +999,20 @@ def delbl(request, id):
         return redirect('/viewblog/')
     except:
         messages.error("Problem in blog deletion")
+
+
+def builds_detail(request):
+    stu = builds_guides.objects.all()
+    serializer = builds_guidesSerializer(stu,many=True)
+    json_data = JSONRenderer().render(serializer.data)
+    print(json_data)
+    return HttpResponse(json_data , content_type='application/json')
+
+
+
+def buildspc_detail(request):
+    stu = Build_PC.objects.all()
+    serializer = Build_PCSerializer(stu,many=True)
+    json_data = JSONRenderer().render(serializer.data)
+    print(json_data)
+    return HttpResponse(json_data , content_type='application/json')

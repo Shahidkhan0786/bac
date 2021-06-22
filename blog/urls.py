@@ -9,5 +9,5 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('contact/', views.contact, name="contact"),
     path('postComment', views.postComment, name="postComment"),
-
+    path("postjson/" ,views.postsdetail),
 ]

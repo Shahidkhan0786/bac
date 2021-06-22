@@ -35,6 +35,18 @@ class post(models.Model):
     def __str__(self):
         return self.title
 
+    @property
+    def post_idd(self):
+        return self.post_id
+
+    @property
+    def post_catagory(self):
+        return self.catagory.catagory_name
+
+    @property
+    def post_author(self):
+        return self.author.username
+
 
 
 # Create your models here.

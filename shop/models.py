@@ -214,6 +214,11 @@ class Product(models.Model):
     graphic_id = models.ForeignKey(Graphic_Card, on_delete=models.CASCADE, null=True)
     psu_id = models.ForeignKey(Smps, on_delete=models.CASCADE, null=True)
     storage_id = models.ForeignKey(Storage, on_delete=models.CASCADE, null=True)
+
+    @property
+    def namee(self):
+        return self.name
+
     @staticmethod
     def get_all_products_byid(category_id):
         if category_id:
@@ -262,7 +267,7 @@ class MyProfile(models.Model):
 
 # save user build
 class Build_PC(models.Model):
-    owner = models.ForeignKey(User , on_delete=models.CASCADE)
+    owner = models.ForeignKey(User , on_delete=models.CASCADE ,related_name='buildpc')
     cpu = models.CharField(max_length=250)
     Mobo=models.CharField(max_length=250)
     ram =models.CharField(max_length=250)
@@ -274,6 +279,12 @@ class Build_PC(models.Model):
     vote_count = models.IntegerField(default= 0 , null=True , blank=True)
     vote_average= models.FloatField(default=0.0 , null=True , blank=True)
 
+    def __unicode__(self):
+        return self.owner
+
+    @property
+    def owner_name(self):
+        return self.owner.username
 
 
 
@@ -355,5 +366,9 @@ class builds_guides(models.Model):
     owner=models.ForeignKey(User , on_delete=models.CASCADE)
 
 
+
+    @property
+    def owner_name(self):
+        return self.owner.username
 
 

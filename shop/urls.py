@@ -90,8 +90,8 @@ path('builds-product-detail/' , views.builds_product_detail),
 path('buy/<int:id>/' , views.buy_builds),
 
 # path('buildrecipt/' , views.b),
-
-
+path("buildjson/" ,views.builds_detail),
+path("buildpcjson/" ,views.buildspc_detail),
 
 
 ]
